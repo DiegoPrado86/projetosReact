@@ -8,5 +8,4 @@ export const Container = styled.div`
     h1 {
         margin: 3rem, 0;
     }
-
 `

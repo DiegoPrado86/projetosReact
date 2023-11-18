@@ -1,7 +1,5 @@
 import { Container } from "./style";
 
-
-
 function Details() {
     return(
         <Container>
@@ -11,5 +9,4 @@ function Details() {
         </Container>
     )
 }
-
 export default Details();

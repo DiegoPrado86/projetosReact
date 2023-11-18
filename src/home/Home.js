@@ -10,7 +10,8 @@ const Home = () => {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
-            fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=pt-BR&page=1`)
+            fetch(`
+            https://api.themoviedb.org/3/tv/popular?api_key=${APIKEY}&language=pt-BR&page=1`)
             .then(response => response.json())
             .then(data => {
                 setMovies(data.results)
@@ -47,7 +48,7 @@ const Home = () => {
                     movies.map(movie => {
                         return (
                             <Movie>
-                                <a href="https://www.google.com">
+                                <a href="#">
                                     <img src={`${img_path}${movie.poster_path}`} alt={movie.title} />
                                 </a>
                                 <span>{movie.title}</span>
