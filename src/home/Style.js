@@ -16,7 +16,8 @@ img {
 
 span {
     font-weight: bold;
-    font-size: 120%;
+    font-size: 100%;
+    text-align: center;
 }
 
 a {

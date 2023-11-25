@@ -3,6 +3,8 @@ import { MovieList } from "./Style";
 import { Movie } from "./Style";
 import { APIKEY } from "../config/key";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 const Home = () => {
     const img_path = 'https://image.tmdb.org/t/p/w500/';
@@ -10,14 +12,15 @@ const Home = () => {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
-            fetch(`
-            https://api.themoviedb.org/3/tv/popular?api_key=${APIKEY}&language=pt-BR&page=1`)
+        fetch(`
+            https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=pt-BR&page=1`)
             .then(response => response.json())
             .then(data => {
+                console.log(data.results);
                 setMovies(data.results)
             })
-    },[])
-    
+    }, [])
+
 
     // const movies = [
     //     {
@@ -47,10 +50,10 @@ const Home = () => {
                 {
                     movies.map(movie => {
                         return (
-                            <Movie>
-                                <a href="#">
+                            <Movie key={movie.id}>
+                                 <Link to = {`/details/${movie.id}`}>
                                     <img src={`${img_path}${movie.poster_path}`} alt={movie.title} />
-                                </a>
+                                </Link>
                                 <span>{movie.title}</span>
                             </Movie>
                         )
