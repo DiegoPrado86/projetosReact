@@ -12,16 +12,7 @@ root.render(
     <BrowserRouter>
         <Routes>
           <Route path='/' element={<App/>}/>
-<<<<<<< HEAD
-          <Route path='/details' element={<Details/>}/>
-        </Routes>
-    </BrowserRouter>
-);
-
-
-=======
           <Route path='/details/:id' element={<Details/>}/>
         </Routes>
     </BrowserRouter>
 );
->>>>>>> parent of 140eca9 (estilização)

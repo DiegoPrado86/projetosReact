@@ -16,12 +16,8 @@ img {
 
 span {
     font-weight: bold;
-<<<<<<< HEAD
-    font-size: 120%;
-=======
     font-size: 100%;
     text-align: center;
->>>>>>> parent of 140eca9 (estilização)
 }
 
 a {
