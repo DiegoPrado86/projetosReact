@@ -3,6 +3,11 @@ import { MovieList } from "./Style";
 import { Movie } from "./Style";
 import { APIKEY } from "../config/key";
 import { useState, useEffect } from "react";
+<<<<<<< HEAD
+=======
+import { Link } from "react-router-dom";
+
+>>>>>>> parent of 140eca9 (estilização)
 
 const Home = () => {
     const img_path = 'https://image.tmdb.org/t/p/w500/';
@@ -10,6 +15,7 @@ const Home = () => {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
+<<<<<<< HEAD
             fetch(`
             https://api.themoviedb.org/3/tv/popular?api_key=${APIKEY}&language=pt-BR&page=1`)
             .then(response => response.json())
@@ -18,6 +24,17 @@ const Home = () => {
             })
     },[])
     
+=======
+        fetch(`
+            https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=pt-BR&page=1`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.results);
+                setMovies(data.results)
+            })
+    }, [])
+
+>>>>>>> parent of 140eca9 (estilização)
 
     // const movies = [
     //     {
@@ -47,10 +64,17 @@ const Home = () => {
                 {
                     movies.map(movie => {
                         return (
+<<<<<<< HEAD
                             <Movie>
                                 <a href="#">
                                     <img src={`${img_path}${movie.poster_path}`} alt={movie.title} />
                                 </a>
+=======
+                            <Movie key={movie.id}>
+                                 <Link to = {`/details/${movie.id}`}>
+                                    <img src={`${img_path}${movie.poster_path}`} alt={movie.title} />
+                                </Link>
+>>>>>>> parent of 140eca9 (estilização)
                                 <span>{movie.title}</span>
                             </Movie>
                         )
