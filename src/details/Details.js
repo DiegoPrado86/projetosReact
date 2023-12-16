@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { APIKEY } from "../config/key";
 import { Container } from "./Style";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPersonWalkingArrowLoopLeft} from '@fortawesome/free-solid-svg-icons';
 
 
 function Details() {
@@ -64,8 +66,9 @@ function Details() {
                     <span className="release">Data de lançamento: {movie.releaseDate}</span>
                     <span>Likes: {movie.like}</span>
                     <span>Avaliação: {Math.round(movie.nota)}</span>
+                    
                     <Link to="/">
-                        <button>Retornar ao Catálogo</button>
+                        <FontAwesomeIcon icon={faPersonWalkingArrowLoopLeft} fade size="2xl" />
                     </Link>
                 </div>
             </div>
